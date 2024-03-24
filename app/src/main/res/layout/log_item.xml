@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.example.mehranm3.database.entity.LogEntity" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:text="@{model.log}"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="5dp"
+            android:text="@{model.timeF}"
+            android:paddingBottom="10dp"
+            android:textColor="#777777"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

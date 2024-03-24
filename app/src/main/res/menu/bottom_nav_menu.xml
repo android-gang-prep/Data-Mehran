@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_logs"
+        android:icon="@drawable/ic_baseline_text_snippet_24"
+        android:title="Logs" />
+    <item
+        android:id="@+id/navigation_friends"
+        android:icon="@drawable/friends"
+        android:title="@string/title_friends" />
+
+    <item
+        android:id="@+id/navigation_groups"
+        android:icon="@drawable/ic_baseline_groups_24"
+        android:title="@string/title_groups" />
+
+
+
+
+</menu>

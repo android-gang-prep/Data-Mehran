@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_groups">
+    <fragment
+        android:id="@+id/navigation_groups"
+        android:name="com.example.mehranm3.ui.groups.GroupsFragment"
+        android:label="@string/title_groups"
+        tools:layout="@layout/fragment_groups">
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_navigation_groups_to_navigation_friends_selectable"
+            app:destination="@id/navigation_friends_selectable"
+          />
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_navigation_groups_to_groupFragment"
+            app:destination="@id/groupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_friends_selectable"
+        android:name="com.example.mehranm3.ui.friends.FriendsFragment"
+        android:label="Select Friends"
+        tools:layout="@layout/fragment_friends">
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="type"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="selectedIds"
+            app:argType="long[]" />
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_navigation_friends_selectable_self"
+            app:destination="@id/navigation_friends_selectable" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_friends"
+        android:name="com.example.mehranm3.ui.friends.FriendsFragment"
+        android:label="@string/title_friends"
+        tools:layout="@layout/fragment_friends">
+
+        <argument
+            android:name="type"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_logs"
+        android:name="com.example.mehranm3.ui.log.LogsFragment"
+        android:label="Logs"/>
+    <fragment
+        android:id="@+id/groupFragment"
+        android:name="com.example.mehranm3.ui.group.GroupFragment"
+        android:label="GroupFragment">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_groupFragment_to_navigation_friends_selectable"
+            app:destination="@id/navigation_friends_selectable" />
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_groupFragment_to_addHistory"
+            app:destination="@id/addHistory" />
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_groupFragment_to_historyDetailFragment"
+            app:destination="@id/historyDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addHistory"
+        android:name="com.example.mehranm3.ui.history.AddHistory"
+        android:label="AddHistory" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <argument
+            android:name="history_id"
+            app:argType="long"
+            android:defaultValue="0L"/>
+
+        <argument
+            android:name="edit"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/historyDetailFragment"
+        android:name="com.example.mehranm3.ui.history.HistoryDetailFragment"
+        android:label="HistoryDetailFragment" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            android:id="@+id/action_historyDetailFragment_to_addHistory"
+            app:destination="@id/addHistory" />
+    </fragment>
+
+
+    <!--    <fragment
+            android:id="@+id/navigation_notifications"
+            android:name="com.example.mehranm3.ui.notifications.NotificationsFragment"
+            android:label="@string/title_notifications"
+            tools:layout="@layout/fragment_notifications" />-->
+</navigation>
